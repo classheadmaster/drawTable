@@ -128,7 +128,7 @@ export default {
       itemTotal:1,
       activePage:1,
       editIndex:undefined,
-      searchItem:undefined
+      searchItem:''
     }
   },
   mounted() {
@@ -206,8 +206,10 @@ export default {
       this.editVisible=false
     },
     searchData(){
+      console.log(this.searchItem)
       if(this.searchItem==''){
         this.totalData=mydata
+        
       }else{
         var search=this.searchItem
         var searchList=this.totalData.filter(function(e){
